@@ -3,6 +3,10 @@
 The most up to date [Shield Study](https://wiki.mozilla.org/Firefox/Shield/Shield_Studies) addon template as of October 2017, sporting a leaner file structure than other shield addon templates.
 
 
+# tutorial
+
+see [./tutorial.md]
+
 # Directory Structure and Files
 
 

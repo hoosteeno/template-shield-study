@@ -8,22 +8,11 @@
  * reloading, as the .xpi file has not been recreated.
  */
 
-console.log("Starting up firefox");
-
-require("geckodriver");
 const firefox = require("selenium-webdriver/firefox");
-const cmd = require("selenium-webdriver/lib/command");
-const Fs = require("fs-extra");
-const FxRunnerUtils = require("fx-runner/lib/utils");
 const path = require("path");
-const webdriver = require("selenium-webdriver");
-
-const By = webdriver.By;
 const Context = firefox.Context;
-const until = webdriver.until;
 
 const {
-  promiseActualBinary,
   installAddon,
   promiseSetupDriver
 } = require("./test/utils");
@@ -31,8 +20,19 @@ const {
 
 const HELP = `
 env vars:
+
 - XPI (optional): path to xpi / addon
-- FIREFOX_BINARY = 'nightly'
+
+  installs $XPI as a temporary addon.
+
+  Note: must be 'legacy signed' if on Beta or Release.
+
+- FIREFOX_BINARY :  nightly | beta | firefox
+
+Future will clean up this interface a bit!
+- prefs
+- multiple addons
+- re-use or create profiles, etc.
 
 `;
 
