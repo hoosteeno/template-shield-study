@@ -30,7 +30,8 @@ echo 'Copying all files in `addon/` into the xpi...'
 
 # xpi all of 'addon' to 'dist'
 pushd addon > /dev/null
-zip -r  "../dist/${XPI_NAME}" .
+mkdir -p "$BASE_DIR/dist"
+zip -r "$BASE_DIR/dist/${XPI_NAME}" .
 popd > /dev/null
 
 
